@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">Task Manager</h2>
+    </header>
+    <main>
+        <section class="border border-primary m-3 p-2">
+            <h5 id="nav" class="bg-primary p-2 text-light"> Tasks - New</h5>
+           
+            <div class="row g-3 p-2"></div>
+    <form action="#" class="form" id="form" name="form">
+        <div class="form_field" >
+            <label for="tasks" class="control_label">TASKS</label>
+            <div class="tasks_div1">
+                <input type="text" class="form_tasks" name="tasks" id="tasks" placeholder="Enter a task">  
+            </div>
+           
+        </div>
+            <div class="form_field" >
+                <label for="taskDescription" class="control_label">TASK DESCRIPTION</label>
+                <div class="form_field">
+                    <input type="text" class="form_tasks" name="taskDescription" id="taskDescription" placeholder="Task description">
+                </div>
+            </div>
+
+            <div class="form_field" >  
+                <label class="control-label" for="status">Status</label>
+ 
+                <select class="form-select" id="status">
+                   <option selected></option> 
+                  <option value="1">New</option>
+                  <option value="2">To be Allocated</option>
+                  <option value="3">Allocated</option>
+                  <option value="4">Completed</option>
+                </select>
+              </div>
+              <div class="form_field">
+                <label class="control-label" for="asignTo">Assigned To</label>
+                <input type="text" class="form-control" id="asignTo" placeholder="Assigned To" aria-label="Assigned To">
+              </div>
+
+              <div class="form_field"> <!-- Date input -->
+                <label class="control-label" for="date">Date</label>
+                <input class="form-control" id="date" name="date" placeholder="" type="date"/>
+              </div>
+                <button class="btn" type="submit"  class="btn" id="btn" onclick="copy_task()">Submit</button>
+
+       
+      </form>
+ <div class="tasksDisplay" id="tasksDisplay">
+    
+ </div>
+</section>
+<section class="border border-secondary m-3 p-2">
+    <h5 id="nav1" class="bg-warning p-2"> Tasks - In Progress</h5>
+      <div class="row mx-3 d-flex justify-content-between">
+            <div id="nav1" class="card text-dark " style="width: 18rem;">
+                <input name="Task_1"  type="text" id='Task_1' class="form-control" placeholder="Task_1" aria-label="Task">
+                <input name="Task_Des"  type="text" id='Task_Des' class="form-control" placeholder="Task description" aria-label="Task">
+                <ul class="list-group list-group-flush">
+                  <input name="asignTo_1"  type="text" id="AsingTo_1" class="form-control" placeholder="Assigned To" aria-label="Assigned To:">
+                  <input name="status_1"  type="text" id='status_1' class="form-control" placeholder="Date Created" aria-label="Date Created">
+                  <input name="date_1"  type="text" id="date_1" class="form-control" placeholder="Date Due" aria-label="Date Due">
+                </ul>
+            </div>
+
+            <div  id="nav1" class="card text-dark " style="max-width: 18rem;">
+                <input name='Task_2' id='Task_2' type="text" class="form-control" placeholder="Task_2" aria-label="Task">
+                <input name="Task_Des2"  type="text" id='Task_Des2' class="form-control" placeholder="Task description" aria-label="Task">
+                <ul class="list-group list-group-flush">
+                  <input name="asignTo_2"  id='asignTo_2' type="text" class="form-control" placeholder="Assigned To:" aria-label="Assigned To:">
+                  <input name="status_2" id="status_2" type="text" class="form-control" placeholder="Date Created" aria-label="Date Created">
+                  <input name="date_2"id='date_2'  type="text" class="form-control" placeholder="Date Due" aria-label="Date Due">
+                </ul>
+            </div>
+
+            <div  id="nav1" class="card text-dark " style="max-width: 18rem;">
+                <input type="text" class="form-control" placeholder="Task_3" aria-label="Task">
+                <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, eum, in nesciunt vero quo repellat ex quod unde perferendis impedit, facilis ut quibusdam! Iste consequuntur, nemo in quibusdam maiores officiis.</p>
+                <ul class="list-group list-group-flush">
+                  <input name="Task_1"  type="text" class="form-control" placeholder="Assigned To:" aria-label="Assigned To:">
+                  <input name="Task_1"  type="text" class="form-control" placeholder="Date Created" aria-label="Date Created">
+                  <input name="Task_1"  type="text" class="form-control" placeholder="Date Due" aria-label="Date Due">
+                </ul>
+            </div>
+
+            <div  id="nav1" class="card text-dark " style="max-width: 18rem;">
+                <input type="text" class="form-control" placeholder="Task_4" aria-label="Task" >
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae placeat natus magni ad, eaque dolores! Id iusto asperiores amet excepturi corporis culpa debitis impedit adipisci quasi autem, laudantium nulla veniam?</p>
+                <ul class="list-group list-group-flush">
+                  <input name="Task_1"  type="text" class="form-control" placeholder="Assigned To:" aria-label="Assigned To:">
+                  <input name="Task_1"  type="text" class="form-control" placeholder="Date Created" aria-label="Date Created">
+                  <input name="Task_1"  type="text" class="form-control" placeholder="Date Due" aria-label="Date Due">
+                </ul>
+            </div>
+    </div>
+  </section>  
+
+  <section class="border border-primary mx-3 p-2" >
+    <h5  id="nav" class="bg-success text-light p-2">Tasks - Completed</h5>
+      <div class="row mx-3 d-flex justify-content-between" >
+        <div id="nav"class="card" style="max-width: 18rem;">
+            <input type="text" class="form-control" placeholder="Task_5" aria-label="Task">
+          <p class="card-text "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error natus neque perspiciatis aliquid accusantium ea fugit accusamus nulla, a velit iusto harum dolores voluptatem veritatis repellat eos esse veniam. </p>
+          <ul class="list-group list-group-flush">
+            <input name="Task_1"  type="text" class="form-control" placeholder="Assigned To:" aria-label="Assigned To:">
+            <input name="Task_1"  type="text" class="form-control" placeholder="Date Created" aria-label="Date Created">
+            <input name="Task_1"  type="text" class="form-control" placeholder="Date Completed" aria-label="Date Completed">
+          </ul>
+      </div>
+
+          <div id="nav" class="card " style="max-width: 18rem;">
+            <input type="text" class="form-control" placeholder="Task_6" aria-label="Task">
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, deserunt eos soluta rerum quo molestiae animi. Quo ratione ipsa sint sit cum, tenetur itaque natus iusto quia voluptates quis quisquam.</p>
+              <ul class="list-group list-group-flush">
+                <input name="Task_1"  type="text" class="form-control" placeholder="Assigned To:"" aria-label="Assigned To:">
+                <input name="Task_1"  type="text" class="form-control" placeholder="Date Created" aria-label="Date Created">
+                <input name="Task_1"  type="text" class="form-control" placeholder="Date Completed" aria-label="Date Completed">
+              </ul>
+          </div>
+
+          <div id="nav" class="card " style="max-width: 18rem;">
+            <input type="text" class="form-control" placeholder="Task_7" aria-label="Task">
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ex id, cum porro pariatur labore exercitationem placeat cumque quis laborum facere doloremque odio animi nostrum ducimus autem sit illo officia.</p>
+              <ul class="list-group list-group-flush"></ul>
+              <input name="Task_1"  type="text" class="form-control" placeholder="Assigned To:" aria-label="Assigned To:">
+              <input name="Task_1"  type="text" class="form-control" placeholder="Date Created" aria-label="Date Created">
+              <input name="Task_1"  type="text" class="form-control" placeholder="Date Completed" aria-label="Date Completed">
+              </ul>
+          </div>
+
+          <div id="nav" class="card" style="max-width: 18rem;">
+            <input type="text" class="form-control" placeholder="Task_8" aria-label="Task">
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur recusandae rerum exercitationem, dicta debitis nam, dignissimos enim dolore rem numquam odit asperiores possimus vero laudantium optio, quidem suscipit. Consequatur!</p>
+              <ul class="list-group list-group-flush">
+                <input name="Task_1"  type="text" class="form-control" placeholder="Assigned To:" aria-label="Assigned To:">
+                <input name="Task_1"  type="text" class="form-control" placeholder="Date Created" aria-label="Date Created">
+                <input name="Task_1"  type="text" class="form-control" placeholder="Date Completed" aria-label="Date Completed">
+              </ul>
+          </div>
+        </div>  
+  </section>
+
+</div>
+</main>
+<footer class="container bg-light py-1 my-5">
+  <p class="float-end"><a href="#">Back to top</a></p>
+  <p>&copy; 2021 PJ Task Manager &middot;
+    <a href="">Home</a> &middot;</a>
+  </p>
+
+</footer>
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+crossorigin="anonymous"></script>
+
+</main>
+        <script type="text/javascript" src="./scripts.js">   </script>
+        <script type="text/javascript" src="./taskmanager.js">  </script>
+     
+
+        
+</body>
+</html>
